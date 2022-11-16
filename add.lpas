@@ -1,0 +1,10 @@
+; Programa: add.lpas
+; Descrição: Realização a soma de 2 números inteiros.
+;
+READ X ; X recebe o valor lido do teclado
+READ Y ; Y recebe o valor lido do teclado
+LOAD X ; carrega o valor de X no registrador (registrador  X)
+ADD Y ; soma Y com X e coloca o resultado no registrador (registrador  registrador + Y)
+STORE Z ; armazena o resultado da soma na variável Z (Z  registrador)
+WRITE Z ; escreve na tela o valor de Z (o resultado da soma)
+HALT ; finaliza o programa

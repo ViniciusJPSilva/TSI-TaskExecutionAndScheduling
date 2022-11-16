@@ -1,0 +1,9 @@
+; Lê dois números inteiros, subtrai e exibe o resultado.
+;
+READ X 
+READ Y
+LOAD X
+SUB Y 
+STORE Z 
+WRITE Z 
+HALT    

@@ -1,0 +1,7 @@
+READ X 
+READ Y
+LOAD X
+DIV Y 
+STORE Z 
+WRITE Z 
+HALT   

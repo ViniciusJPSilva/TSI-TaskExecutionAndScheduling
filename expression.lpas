@@ -1,0 +1,11 @@
+; Programa: expression.lpas
+; Descrição: Calcula a expressão 20 + ((99 * 8) / 2) - 3.
+;
+LOAD 99 ; registrador = 99
+MUL 8 ; registrador = 792
+DIV 2 ; registrador = 396
+ADD 20 ; registrador = 416
+SUB 3 ; registrador = 413
+STORE X ; X = registrador, ou seja, X recebe 413
+WRITE X ; exibe na tela o número 413 (o resultado da expressão aritmética)
+HALT ; finaliza o programa
