@@ -9,6 +9,42 @@ em um programa chamado tes, que quando for executado deve exibir o prompt abaixo
 * <strong>tes ></strong>
 
 <hr/>
+<h3>Como executar</h3>
+
+O programa usa chamadas POSIX (`fork`, `wait`), portanto precisa de um ambiente Linux/Unix.
+A forma mais simples, inclusive no Windows e no macOS, é usar o **Docker**.
+
+**Com Docker** (requer [Docker](https://docs.docker.com/get-docker/) instalado):
+
+```bash
+docker build -t tes .
+docker run --rm -it tes
+```
+
+> Use sempre `-it`: o `tes` é interativo e precisa de um terminal (TTY). Enviar a entrada via pipe
+> (`echo ... | docker run -i tes`) faz o buffer de E/S ser duplicado no `fork` e gera saída incorreta.
+
+A imagem já contém os programas de exemplo (`add`, `sub`, `mul`, `div`, `expression`). Para usar
+seus próprios arquivos `.lpas`, monte a pasta atual no container:
+
+```bash
+docker run --rm -it -v "$(pwd):/app" tes
+```
+
+No PowerShell, use `-v "${PWD}:/app"`.
+
+**Sem Docker** (Linux, macOS ou WSL com GCC):
+
+```bash
+gcc -std=gnu11 -Wall -O2 -o tes tes.c
+./tes
+```
+
+Execute o `tes` na pasta onde estão os arquivos `.lpas`. Exemplo de sessão:
+
+![Exemplo de execução do tes](docs/exemplo-execucao.png)
+
+<hr/>
 <h3>1. Execução de Tarefas</h3>
 
 Este serviço permite executar simultaneamente até quatro programas da linguagem LPAS,
